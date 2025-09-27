@@ -1,0 +1,8 @@
+# Backend deployment configuration for Render
+# This file tells Render how to build and run your FastAPI backend
+
+# Build command (what to run to build your app)
+pip install -r requirements.txt
+
+# Start command (what to run to start your app)
+uvicorn main:app --host 0.0.0.0 --port $PORT
