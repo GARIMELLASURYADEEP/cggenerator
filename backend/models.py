@@ -13,7 +13,7 @@ class CertificateCreate(BaseModel):
 
     @validator('domain')
     def validate_domain(cls, v):
-        allowed_domains = ["AI", "Web Development", "Cyber Security", "Data Science", "Cloud Computing"]
+        allowed_domains = ["Artificial Intelligence & Machine Learning", "Web Development", "Cyber Security", "Data Science", "Cloud Computing"]
         if v not in allowed_domains:
             raise ValueError(f'Domain must be one of: {", ".join(allowed_domains)}')
         return v
