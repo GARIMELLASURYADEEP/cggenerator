@@ -67,7 +67,11 @@ A full-stack web application for generating professional tech certificates.
 1. Go to [railway.app](https://railway.app)
 2. Connect GitHub repo
 3. Railway will auto-detect both services
-4. Deploy!
+4. **Important**: After deployment, go to your frontend service settings and add environment variable:
+   - Variable name: `REACT_APP_BACKEND_URL`
+   - Value: Your backend service URL (e.g., `https://your-backend-service.up.railway.app`)
+5. Redeploy the frontend service
+6. Test the application - certificate generation should now work on all devices!
 
 ## Project Structure
 

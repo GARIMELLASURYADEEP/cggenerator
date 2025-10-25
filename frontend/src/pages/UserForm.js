@@ -66,7 +66,8 @@ function UserForm() {
       navigate('/certificate');
     } catch (error) {
       console.error('Error submitting form:', error);
-      setErrors({ submit: 'Failed to generate certificate. Please try again.' });
+      const errorMessage = error.response?.data?.detail || error.message || 'Failed to generate certificate. Please try again.';
+      setErrors({ submit: errorMessage });
     } finally {
       setLoading(false);
     }
