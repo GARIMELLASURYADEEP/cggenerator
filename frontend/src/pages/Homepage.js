@@ -4,7 +4,7 @@ import { Cpu, Globe, Shield, BarChart3, Cloud } from 'lucide-react';
 
 const domains = [
   {
-    name: 'AI',
+    name: 'Artificial Intelligence & Machine Learning',
     icon: Cpu,
     gradient: 'from-cyan-500 to-blue-600',
     description: 'Artificial Intelligence & Machine Learning'
@@ -32,7 +32,7 @@ const domains = [
     icon: Cloud,
     gradient: 'from-violet-500 to-indigo-600',
     description: 'Cloud Infrastructure & Services'
-  }
+  },
 ];
 
 function Homepage() {

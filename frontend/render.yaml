@@ -6,3 +6,4 @@ npm install && npm run build
 
 # Publish directory (where the built files are)
 build
+

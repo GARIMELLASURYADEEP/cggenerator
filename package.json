@@ -1,19 +1,13 @@
 {
-  "name": "tech-certificate-generator",
+  "name": "cggenerator",
   "version": "1.0.0",
-  "description": "Tech Certificate Generator - Full Stack Application",
-  "main": "index.js",
+  "description": "Tech Certificate Generator",
   "scripts": {
+    "build": "cd frontend && npm install && npm run build",
     "start": "cd frontend && npm start",
-    "build": "cd frontend && npm run build",
-    "install-all": "cd backend && pip install -r requirements.txt && cd ../frontend && npm install",
-    "dev": "concurrently \"cd backend && python main.py\" \"cd frontend && npm start\"",
-    "deploy": "echo 'Deploying to Render...' && echo 'Please follow the deployment instructions'"
+    "dev": "concurrently \"cd backend && python main.py\" \"cd frontend && npm start\""
   },
-  "keywords": ["certificate", "generator", "fastapi", "react", "tech"],
-  "author": "Your Name",
-  "license": "MIT",
-  "devDependencies": {
+  "dependencies": {
     "concurrently": "^7.6.0"
   }
 }
