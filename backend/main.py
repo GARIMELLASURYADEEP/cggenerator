@@ -17,8 +17,13 @@ from models import CertificateCreate, Certificate
 
 app = FastAPI(title="Tech Certificate Generator API", version="1.0")
 
-# CORS middleware
-origins = ["*"]  # For development; restrict in production
+# CORS middleware - Allow all origins for deployment
+origins = [
+    "http://localhost:3000",
+    "https://cggenerator-production.up.railway.app",
+    "https://cggenerator-frontend.onrender.com",
+    "*"  # Allow all origins for now
+]
 app.add_middleware(
     CORSMiddleware,
     allow_origins=origins,
@@ -101,4 +106,6 @@ async def validation_exception_handler(request, exc):
 
 if __name__ == "__main__":
     import uvicorn
-    uvicorn.run(app, host="0.0.0.0", port=8000)
+    import os
+    port = int(os.environ.get("PORT", 8000))
+    uvicorn.run(app, host="0.0.0.0", port=port)

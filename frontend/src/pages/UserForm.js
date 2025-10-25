@@ -1,6 +1,7 @@
 import React, { useState, useEffect } from 'react';
 import { useNavigate } from 'react-router-dom';
 import axios from 'axios';
+import API_CONFIG from '../config/api';
 
 function UserForm() {
   const navigate = useNavigate();
@@ -51,7 +52,9 @@ function UserForm() {
 
     setLoading(true);
     try {
-      const backendUrl = process.env.REACT_APP_BACKEND_URL || 'http://localhost:8000';
+      // Get the appropriate backend URL based on environment
+      const backendUrl = API_CONFIG.getBaseURL();
+      console.log('Backend URL:', backendUrl); // Debug log
       const response = await axios.post(`${backendUrl}/api/certificates`, {
         full_name: formData.fullName,
         email: formData.email,
